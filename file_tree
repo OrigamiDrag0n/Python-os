@@ -51,4 +51,4 @@ while q != 0:
 ts = getscreen()
 savename = input("Savename?\n") #File name to save it by.
 ts.getcanvas().postscript(file="{}.eps".format(savename)) #This saves the image in good quality.
-print("Done!")
+print("Done, file saved as {}.esp".format(savename))
