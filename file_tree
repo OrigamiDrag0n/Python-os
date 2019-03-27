@@ -21,7 +21,7 @@ def colour(h):     #Colour is between 0 and 360, and varies throughout the rainb
     else:
         return [1,0,1-abs(h/60%2 -1)]
     
-init = input("Starting file?")    #Input the name of the folder you want to begin with
+init = input("Starting file?\n")    #Input the name of the folder you want to begin with
 bgcolor("Black")
 angles = {init:[0 ,2*pi ,0]}; newangles = {}   #[startangle, finangle, radius]
 newfiles = [init]; newerfiles = []     #looks at files on the last layer of the iteration
@@ -49,6 +49,6 @@ while q != 0:
     angles = newangles
     newangles = {}
 ts = getscreen()
-savename = input("Savename?") #File name to save it by.
+savename = input("Savename?\n") #File name to save it by.
 ts.getcanvas().postscript(file="{}.eps".format(savename)) #This saves the image in good quality.
 print("Done!")
