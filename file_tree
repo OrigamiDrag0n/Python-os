@@ -3,6 +3,7 @@ from math import *
 from turtle import *
 title('OrigamiDrag0n File tree visualiser')
 speed(0); hideturtle()
+init = input("Path to file?\n")    #Input the name of the folder you want to begin with
 can=Screen()
 can.setup(750,750,.50,.0)
 can.bgpic('Desktop/black.png')
@@ -26,7 +27,6 @@ def colour(h):     #Colour is between 0 and 360, and varies throughout the rainb
         return [1-abs(h/60%2 -1),0,1]
     else:
         return [1,0,1-abs(h/60%2 -1)]
-init = input("Path to file?\n")    #Input the name of the folder you want to begin with
 angles = {init:[0 ,2*pi ,0]}; newangles = {}   #[startangle, finangle, radius]
 newfiles = [init]; newerfiles = []     #looks at files on the last layer of the iteration
 q = 1; i = 0
