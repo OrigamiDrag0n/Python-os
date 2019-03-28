@@ -2,7 +2,7 @@
           ##################################################################################
           ###  File tree visualiser for Python(3)                                        ###
           ###  Made as a fun project by OrigamiDrag0n from 20/03/19 - 23/03/19           ###
-          ###  and thanks to Fisttokeys for some edits which speed up the code.          ###
-          ###  Have fun with this - Watch out for infinite loops.                        ###
+          ###  Thanks to Fisttokeys for some edits which speed up the code.              ###
+          ###  Have fun with this - watch out for infinite loops!                        ###
           ##################################################################################
           ##################################################################################
