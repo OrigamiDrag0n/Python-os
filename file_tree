@@ -1,12 +1,12 @@
 import os
 from math import *
+init = input("Path to file?\n")    #Input the name of the folder you want to begin with
 from turtle import *
 title('OrigamiDrag0n File tree visualiser')
 speed(0); hideturtle()
-init = input("Path to file?\n")    #Input the name of the folder you want to begin with
 can=Screen()
 can.setup(750,750,.50,.0)
-can.bgpic('Desktop/black.png')     #Background file
+#can.bgpic('Desktop/black.png')     #Background file
 can.tracer(0,0)##### This is what makes it go faster
 can.update()
 
