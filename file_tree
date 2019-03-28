@@ -7,6 +7,7 @@ speed(0); hideturtle()
 can=Screen()
 can.setup(750,750,.50,.0)
 #can.bgpic('Desktop/black.png')     #Background file
+bgcolor('Black')
 can.tracer(0,0)##### This is what makes it go faster
 can.update()
 
