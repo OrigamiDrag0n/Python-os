@@ -55,4 +55,4 @@ while q != 0:
 
 savename = input("Savename?\n") #File name to save it by.
 can.getcanvas().postscript(file="{}.eps".format(savename)) #This saves the image in good quality.
-print("Done, file saved as {}.esp".format(savename))
+print("Done, file saved as {}.eps".format(savename))
