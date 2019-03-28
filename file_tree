@@ -1,15 +1,18 @@
-#File tree visualiser for Python (3)
-#Made as a fun project by OrigamiDrag0n from 20/03/19 - 23/03/19
-#Have fun with this - it could take a long time to load for some folders.
-
 import os
 from math import *
 from turtle import *
+title('OrigamiDrag0n File tree visualiser')
 speed(0); hideturtle()
+init = input("Path to file?\n")    #Input the name of the folder you want to begin with
+can=Screen()
+can.setup(750,750,.50,.0)
+can.bgpic('Desktop/black.png')
+can.tracer(0,0)##### This is what makes it go fast
+can.update()
 def go(pos1, pos2, color): #Draws an edge btwn pos1 node and pos2 node.
     v1 = [pos1[2]*cos((pos1[0]+pos1[1])/2),pos1[2]*sin((pos1[0]+pos1[1])/2)]
     v2 = [pos2[2]*cos((pos2[0]+pos2[1])/2),pos2[2]*sin((pos2[0]+pos2[1])/2)]
-    penup(); goto(v1); pendown(); pencolor(color); goto(v2); pencolor(color); dot(5)
+    penup(); goto(v1); pendown(); pencolor(color); goto(v2); pencolor(color); dot(4)
     
 def colour(h):     #Colour is between 0 and 360, and varies throughout the rainbow before cycling back
     if h < 60:
@@ -24,9 +27,6 @@ def colour(h):     #Colour is between 0 and 360, and varies throughout the rainb
         return [1-abs(h/60%2 -1),0,1]
     else:
         return [1,0,1-abs(h/60%2 -1)]
-    
-init = input("Filename ")    #Input the name of the folder you want to begin with
-bgcolor("Black")
 angles = {init:[0 ,2*pi ,0]}; newangles = {}   #[startangle, finangle, radius]
 newfiles = [init]; newerfiles = []     #looks at files on the last layer of the iteration
 q = 1; i = 0
@@ -41,7 +41,7 @@ while q != 0:
                 x = os.listdir(f); q += 1
                 for j in range(len(x)):
                     g = x[j]
-                    newangle = [oldangle[0]+j*(oldangle[1]-oldangle[0])/len(x),oldangle[0]+(j + 1)*(oldangle[1]-oldangle[0])/len(x),150*((i-0.5)**0.5)]
+                    newangle = [oldangle[0]+j*(oldangle[1]-oldangle[0])/len(x),oldangle[0]+(j + 1)*(oldangle[1]-oldangle[0])/len(x),170*((i-0.5)**0.5)]
                     go(oldangle, newangle,c)
                     newangles[os.path.join(f, g)] = newangle
                     newerfiles.append(os.path.join(f, g))
@@ -52,6 +52,7 @@ while q != 0:
     newerfiles = []
     angles = newangles
     newangles = {}
-ts = getscreen()
-ts.getcanvas().postscript(file="Filetree.eps") #Saves the file - change the file name to prevent overriding. This saves the image in good quality.
-print("Done!")
+
+savename = input("Savename?\n") #File name to save it by.
+can.getcanvas().postscript(file="{}.eps".format(savename)) #This saves the image in good quality.
+print("Done, file saved as {}.esp".format(savename))
